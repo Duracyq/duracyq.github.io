@@ -214,7 +214,7 @@ a:hover {
 }
 
 .menu-links.open {
-  max-height: 300px;
+  max-height: 90vh; /* let the full menu + language buttons be visible on mobile */
 }
 
 .hamburger-icon.open span:first-child {
