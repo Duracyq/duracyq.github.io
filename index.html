@@ -7,19 +7,29 @@
     <title>Portfolio Szymon Kajak</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon"
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <nav id="desktop-nav">
       <div class="logo">Szymon Kajak</div>
       <div>
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#events" data-i18n="nav.events">Events</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
+      </div>
+      <div class="lang-dropdown">
+        <button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+          <span class="flag">🇵🇱</span>
+          <span class="lang-label" data-i18n="lang.label">Polski</span>
+        </button>
+        <div class="lang-menu">
+          <button class="lang-option" data-lang-active="pl" data-lang="pl" type="button"><span class="flag">🇵🇱</span> Polski</button>
+          <button class="lang-option" data-lang-active="en" data-lang="en" type="button"><span class="flag">🇬🇧</span> English</button>
+        </div>
       </div>
     </nav>
     <nav id="hamburger-nav">
@@ -31,10 +41,15 @@
           <span></span>
         </div>
         <ul class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li><a href="#about" data-i18n="nav.about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" data-i18n="nav.experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" data-i18n="nav.projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#events" data-i18n="nav.events" onclick="toggleMenu()">Events</a></li>
+          <li><a href="#contact" data-i18n="nav.contact" onclick="toggleMenu()">Contact</a></li>
+          <li class="menu-lang-row">
+            <button class="lang-option" data-lang-active="pl" data-lang="pl" type="button">🇵🇱 Polski</button>
+            <button class="lang-option" data-lang-active="en" data-lang="en" type="button">🇬🇧 English</button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -43,18 +58,18 @@
         <img src="./assets/IMG_0158_-selected_-removebg-round.png" alt="Szymon Kajak profile picture" />
       </div>
       <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
+        <p class="section__text__p1" data-i18n="hero.hello">Hello, I'm</p>
         <h1 class="title">Szymon Kajak</h1>
-        <p class="section__text__p2">Student</p>
+        <p class="section__text__p2" data-i18n="hero.role">Junior IT Specialist & IT student</p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
-            onclick="window.open('./assets/CV_Szymon_Kajak.pdf')"
+            onclick="window.open('./assets/CV-3.pdf')"
           >
-            Download CV
+            <span data-i18n="hero.download">Download CV (PDF)</span>
           </button>
           <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
+            <span data-i18n="hero.contact">Contact Info</span>
           </button>
         </div>
         <div id="socials-container">
@@ -92,8 +107,8 @@
                 alt="Experience icon"
                 class="icon"
               />
-              <h3>Experience</h3>
-              <p> <1 year <br />Backend Development</p>
+              <h3 data-i18n="about.currentTitle">Current role</h3>
+              <p data-i18n="about.currentDesc">Junior IT Specialist | Service Desk @ IT Solution Factor (Warsaw)</p>
             </div>
             <div class="details-container">
               <img
@@ -101,16 +116,16 @@
                 alt="Education icon"
                 class="icon"
               />
-              <h3>Education</h3>
-              <p><i>In progress:</i> High School level<br />Liceum Ogólnokształcące im. Marszałka Stanisława Małachowskiego w Płocku</p>
+              <h3 data-i18n="about.educationTitle">Education</h3>
+              <p data-i18n="about.educationDesc" data-i18n-html="true">
+                Computer Science (MEng) — Military University of Technology, Warsaw<br />
+                Math/Physics/CS high school — LO im. Marszałka Stanisława Małachowskiego, Płock
+              </p>
             </div>
           </div>
           <div class="text-container">
-            <p>
-              I am a fourth-grade high school student with skills that allow me to work efficiently in server maintenance and back-end project management.
-              My patience and ability to collaborate effectively make me stand out, enabling me to complete tasks successfully with my colleagues.
-              Additionally, my ease in establishing rapport with other employees underscores my open-mindedness and strong communication skills.
-              Beyond these areas, I am an enthusiastic learner with a particular aptitude for languages, especially English.
+            <p data-i18n="about.summary">
+              First-year Computer Science student focused on server operations and IT support. Patient, team-oriented, and communicative; quick to learn and fluent in English.
             </p>
           </div>
         </div>
@@ -123,192 +138,47 @@
       />
     </section>
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <p class="section__text__p1" data-i18n="exp.lead">Explore my</p>
+      <h1 class="title" data-i18n="exp.title">Experience</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">Backend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Firebase</h3>
-                  <p>Intermediate</p>
-                </div>
+            <h2 class="experience-sub-title" data-i18n="exp.workTitle">Work experience</h2>
+            <div class="article-container vertical">
+              <article class="experience-item">
+                <h3 data-i18n="exp.job1.title">Junior IT Specialist | Service Desk</h3>
+                <p data-i18n="exp.job1.meta">IT Solution Factor — Warsaw | Sep 2024 – Aug 2025</p>
+                <ul class="bullet-list" data-i18n="exp.job1.list" data-i18n-html="true">
+                  <li>Handling and triaging IT support tickets</li>
+                  <li>Routing, monitoring, and escalating incidents</li>
+                  <li>Supporting partners during software rollouts</li>
+                  <li>Assisting with office, computer, and mobile devices</li>
+                  <li>Maintaining partner relationships</li>
+                  <li>Security Operation Center L1 (SOC/SIEM), Microsoft Azure</li>
+                </ul>
               </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Dart</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Flutter</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Networking</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Linux</h3>
-                  <p>Intermediate</p>
-                </div>
+              <article class="experience-item">
+                <h3 data-i18n="exp.job2.title">Service Desk Intern</h3>
+                <p data-i18n="exp.job2.meta">IT Solution Factor — Płock | Jun 2024 – Sep 2024</p>
+                <p data-i18n="exp.job2.desc">Internship preparing for the Junior IT Specialist role.</p>
               </article>
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">Backend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Firestore</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
+            <h2 class="experience-sub-title" data-i18n="exp.skillsTitle">Skills & languages</h2>
+            <ul class="badge-list" data-i18n="exp.skillsList" data-i18n-html="true">
+              <li>C++</li><li>Python</li><li>Linux</li><li>ITSM</li><li>IT support</li><li>Teamwork</li><li>Creativity</li><li>Stress resilience</li><li>Self-organization</li><li>Communication</li>
+            </ul>
+            <p class="languages" data-i18n="exp.langDesc">Polish (native), English (advanced), German (basic)</p>
+            <h2 class="experience-sub-title" data-i18n="exp.activityTitle">Additional activity</h2>
+            <ul class="bullet-list" data-i18n="exp.activityList" data-i18n-html="true">
+              <li>Student Council: Vice President (2023–2024) and President (2024–2025)</li>
+              <li>WOŚP volunteer (Jan–Feb 2021)</li>
+              <li>Choir member at LO Małachowski (2022–2024)</li>
+            </ul>
           </div>
         </div>
       </div>
-      <br><br>
-      <div class="details-container" style="margin: 20px;">
-        <h2 class="experience-sub-title">2024 - Present</h2>
-        <div style="display: flex; gap: 20px;"> <!-- Flex container for side-by-side layout -->
-            <div class="article-container" style="flex: 1;">
-                <!-- <article> -->
-                  <!-- <img src="./assets/checkmark.png" alt="Experience icon" class="icon" /> -->
-                <!-- </article> -->
-                    <div class="article-content">
-                        <h3>Junior IT Specialist | Service Desk</h3>
-                        <p><strong>Company:</strong> IT Solution Factor sp. z.o.o.</p>
-                        <p><strong>Location:</strong> Płock, Mazowieckie, Poland </p>
-                        <p><strong>Duration:</strong> Jun 2024 - Present</p>
-<!--                         <p><strong>Role:</strong> Internship, preparing for a <strong>Junior IT Specialist</strong> position</p> -->
-                    </div>
-            </div>
-    
-            <div class="article-container" style="flex: 1;">
-                <div class="responsibilities">
-                    <p><strong>Responsibilities:</strong></p>
-                    <ul class="responsibility-list" style="list-style-type: none; padding: 0; margin: 0;"> <!-- Remove bullets -->
-                        <li style="display: flex; align-items: center; margin-bottom: 10px;"> <!-- Flex for icon and text -->
-                            <img src="./assets/checkmark.png" alt="Checkmark" class="icon" style="margin-right: 10px;" />
-                            <span>Handling and managing IT-related issues and tickets</span>
-                        </li>
-                        <li style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <img src="./assets/checkmark.png" alt="Checkmark" class="icon" style="margin-right: 10px;" />
-                            <span>Managing tickets by forwarding to appropriate groups, monitoring, escalating, and taking necessary actions</span>
-                        </li>
-                        <li style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <img src="./assets/checkmark.png" alt="Checkmark" class="icon" style="margin-right: 10px;" />
-                            <span>Supporting company partners with the deployment of new IT software</span>
-                        </li>
-                        <li style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <img src="./assets/checkmark.png" alt="Checkmark" class="icon" style="margin-right: 10px;" />
-                            <span>Assisting with the management of office software, IT devices, and mobile devices</span>
-                        </li>
-                        <li style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <img src="./assets/checkmark.png" alt="Checkmark" class="icon" style="margin-right: 10px;" />
-                            <span>Maintaining good relationships with company partners</span>
-                        </li>
-                    </ul>
-                </div>
-    
-                <div class="article-container">
-                    <p><strong>Additional Tasks:</strong></p>
-                    <ul class="responsibility-list" style="list-style-type: none; padding: 0; margin: 0;">
-                        <li style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <img src="./assets/checkmark.png" alt="Checkmark" class="icon" style="margin-right: 10px;" />
-                            <span>Security Operation Center - Level 1 (SOC/SIEM)</span>
-                        </li>
-                        <li style="display: flex; align-items: center; margin-bottom: 10px;">
-                            <img src="./assets/checkmark.png" alt="Checkmark" class="icon" style="margin-right: 10px;" />
-                            <span>Microsoft Azure support</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
       <img
         src="./assets/arrow.png"
         alt="Arrow icon"
@@ -319,51 +189,47 @@
 
     <!-- here create a section based on the other ones -->
     <section id="events">
-      <br><br>    <br><br><br><br>
-
-      <p class="section__text__p1">Participated</p>
-      <h1 class="title">Events</h1>
+      <p class="section__text__p1" data-i18n="events.lead">Participated</p>
+      <h1 class="title" data-i18n="events.title">Events</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <!-- Event 1 -->
           <div class="details-container">
-            <h2 class="experience-sub-title">Hackathon City Coders Płock IV Edition</h2>
-            <p>Date: October 9, 2021</p>
-            <p>Location: POKiS</p>
-            <p>Role: Participant</p>
+            <h2 class="experience-sub-title" data-i18n="events.hack4">Hackathon City Coders Płock IV Edition</h2>
+            <p data-i18n="events.hack4.date">Date: October 9, 2021</p>
+            <p data-i18n="events.hack4.loc">Location: POKiS</p>
+            <p data-i18n="events.hack4.role">Role: Participant</p>
           </div>
           <!-- Event 2 -->
           <div class="details-container">
-            <h2 class="experience-sub-title">Hackathon City Coders Płock V Edition</h2>
-            <p>Date: September 24, 2022</p>
-            <p>Location: CENTRUM EDUKACJI SP. Z O.O. GRUPA ORLEN</p>
-            <p>Role: Participant</p>
+            <h2 class="experience-sub-title" data-i18n="events.hack5">Hackathon City Coders Płock V Edition</h2>
+            <p data-i18n="events.hack5.date">Date: September 24, 2022</p>
+            <p data-i18n="events.hack5.loc">Location: CENTRUM EDUKACJI SP. Z O.O. GRUPA ORLEN</p>
+            <p data-i18n="events.hack5.role">Role: Participant</p>
           </div>
           <!-- Event 3 -->
           <div class="details-container">
-            <h2 class="experience-sub-title">Hackathon City Coders Płock VI Edition</h2>
-            <p>Date: October 7, 2023</p>
-            <p>Location: CENTRUM EDUKACJI SP. Z O.O. GRUPA ORLEN</p>
-            <p>Role: Participant</p>
+            <h2 class="experience-sub-title" data-i18n="events.hack6">Hackathon City Coders Płock VI Edition</h2>
+            <p data-i18n="events.hack6.date">Date: October 7, 2023</p>
+            <p data-i18n="events.hack6.loc">Location: CENTRUM EDUKACJI SP. Z O.O. GRUPA ORLEN</p>
+            <p data-i18n="events.hack6.role">Role: Participant</p>
           </div>
           
           <div class="about-containers" style="justify-content: center !important;">
             <img src="./assets/IMG_20240224_115534~2.jpg" alt="proof" class="project-img">
           </div>
-          <br><br>
          </div>
-        
+
       </div>
-      <br><br>
       <div class="experience-details-container">
         <div class="about-containers">
-          <!--Event 4-->>
+          <!--Event 4-->
           <div class="details-container">
-            <h2 class="experience-sub-title">Hackathon City Coders Płock VII Edition</h2>
-            <h3 class="experience-sub-title">III place</h3>
-            <p>Date: October 12, 2024</p>
-            <p>Location: CENTRUM EDUKACJI SP. Z O.O. GRUPA ORLEN</p>
-            <p>Role: Participant</p>
+            <h2 class="experience-sub-title" data-i18n="events.hack7">Hackathon City Coders Płock VII Edition</h2>
+            <h3 class="experience-sub-title" data-i18n="events.thirdPlace">III place</h3>
+            <p data-i18n="events.hack7.date">Date: October 12, 2024</p>
+            <p data-i18n="events.hack7.loc">Location: CENTRUM EDUKACJI SP. Z O.O. GRUPA ORLEN</p>
+            <p data-i18n="events.hack7.role">Role: Participant</p>
             <!-- <img class="about-containers" width="400px" src="./assets/241018_00h09m03s_screenshot.png" alt="zdjęcie"> -->
           </div>
           <div class="details-container">
@@ -383,80 +249,43 @@
     
 
     <section id="projects">
-      <br><br><br><br>
-      <br><br><br><br>
-      <br><br><br><br>
-      <br><br><br><br>
-      <br><br><br><br>
-      <br><br><br><br>
-      <br><br><br><br>      <br><br><br><br>
-      <br><br><br><br>
-      <br><br><br><br>
-
-      <br><br><br><br>
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
+      <p class="section__text__p1" data-i18n="projects.lead">Browse My Recent</p>
+      <h1 class="title" data-i18n="projects.title">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
             <div class="article-container">
               <img
                 src="./assets/9347286a-d154-40e1-9111-292b2c29a4d5.webp"
-                alt="Project 1"
+                alt="Portfolio website"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">debate-website</h2>
+            <h2 class="experience-sub-title project-title" data-i18n="projects.portfolio">Portfolio Website</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/Duracyq/debate-website')"
+                onclick="window.open('https://github.com/Duracyq/duracyq.github.io')"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="window.open('https://duracyq.github.io/debate-website')"
+                onclick="window.open('https://duracyq.github.io/')"
               >
                 Live Demo
               </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/Hackathon-Plock-logo-1280x640.jpg"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Volounteerly</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/Duracyq/froggers-flutter_hackaton2023/')"
-              >
-                Github
-              </button>
-              <!-- <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button> -->
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
               <img
                 src="./assets/image.png"
-                alt="Project 3"
+                alt="MalachApp"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">
-              MalachApp <i>(Depreached)</i>
-            </h2>
+            <h2 class="experience-sub-title project-title" data-i18n="projects.malachapp">MalachApp</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -464,35 +293,23 @@
               >
                 Github
               </button>
-              <!-- <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button> -->
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/Malachowianka-1.jpg"
-                alt="Project 4"
+                src="./assets/241018_00h09m03s_screenshot.png"
+                alt="PiŻa(M)Ka project"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">vote-for-kajak</h2>
+            <h2 class="experience-sub-title project-title" data-i18n="projects.pizamka">PiŻa(M)Ka – waste sorting assistant</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/Duracyq/vote-for-kajak/')"
+                onclick="window.open('https://github.com/Duracyq/hackathon2024_pizamka')"
               >
                 Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://duracyq.github.io/vote-for-kajak'"
-              >
-                Live Demo
               </button>
             </div>
           </div>
@@ -506,20 +323,9 @@
         onclick="location.href='./#contact'"
       />
     </section>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>
-    <br><br><br><br>      <br><br><br><br>
-    <br><br><br><br>    <br><br><br><br>
-
-
-    <br><br><br><br>
     <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
+      <p class="section__text__p1" data-i18n="contact.lead">Get in Touch</p>
+      <h1 class="title" data-i18n="contact.title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
           <img
@@ -543,11 +349,11 @@
       <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="#events" data-i18n="nav.events">Events</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>
       </nav>

@@ -35,7 +35,9 @@
     height: fit-content;
   }
   section {
-    margin: 0 5%;
+    margin: 0 auto;
+    width: min(960px, 100% - 2.5rem);
+    padding: 4.5rem 1.25rem;
   }
   .section__pic-container {
     width: 275px;
