@@ -17,6 +17,8 @@ const translations = {
       "Computer Science (MEng) — Military University of Technology, Warsaw<br />Math/Physics/CS high school — LO im. Marszałka Stanisława Małachowskiego, Płock",
     "about.summary":
       "First-year Computer Science student focused on server operations and IT support. Patient, team-oriented, and communicative; quick to learn and fluent in English.",
+    "about.lead": "Get To Know More",
+    "about.title": "About Me",
     "exp.lead": "Explore my",
     "exp.title": "Experience",
     "exp.workTitle": "Work experience",
@@ -79,6 +81,8 @@ const translations = {
       "Informatyka (magister inż.) — Wojskowa Akademia Techniczna, Warszawa<br />Profil mat-fiz-inf — LO im. Marszałka Stanisława Małachowskiego, Płock",
     "about.summary":
       "Student pierwszego roku informatyki, skupiony na obsłudze serwerów i wsparciu IT. Cierpliwy, zespołowy i komunikatywny; szybko się uczę i biegle posługuję się angielskim.",
+    "about.lead": "Poznaj mnie bliżej",
+    "about.title": "O mnie",
     "exp.lead": "Poznaj moje",
     "exp.title": "Doświadczenie",
     "exp.workTitle": "Doświadczenie zawodowe",

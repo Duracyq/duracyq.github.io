@@ -18,6 +18,13 @@
   }
   #hamburger-nav {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(246, 248, 251, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 40;
   }
   #experience,
   .experience-details-container {
@@ -38,6 +45,9 @@
     margin: 0 auto;
     width: min(960px, 100% - 2.5rem);
     padding: 4.5rem 1.25rem;
+  }
+  body {
+    padding-top: 74px; /* offset for the fixed mobile header */
   }
   .section__pic-container {
     width: 275px;
