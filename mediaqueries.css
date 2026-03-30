@@ -50,6 +50,21 @@
 }
 
 @media screen and (max-width: 600px) {
+  section {
+    width: 100%;
+    padding: 3.5rem 1.25rem;
+  }
+  .section__text,
+  .section__text .section__text__p1,
+  .section__text .title {
+    text-align: center;
+  }
+  .btn-container {
+    justify-content: center;
+  }
+  #socials-container {
+    justify-content: center;
+  }
   #contact,
   footer {
     height: 40vh;
@@ -57,6 +72,11 @@
   #profile {
     height: 83vh;
     margin-bottom: 0;
+  }
+  .section__pic-container {
+    width: min(240px, 70vw);
+    height: min(240px, 70vw);
+    margin: 0 auto 2rem;
   }
   article {
     font-size: 1rem;
@@ -89,8 +109,6 @@
     text-align: center;
   }
   .section__pic-container {
-    width: auto;
-    height: 46vw;
     justify-content: center;
   }
   .section__text__p2 {
